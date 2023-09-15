@@ -71,6 +71,10 @@ open class HttpServer: HttpServerIO {
         return super.dispatch(request)
     }
 
+	public func resetRoutes() {
+		router.reset()
+	}
+
     public struct MethodRoute {
         public let method: String
         public let router: HttpRouter

@@ -28,6 +28,10 @@ open class HttpRouter {
     /// The Queue to handle the thread safe access to the routes
     private let queue = DispatchQueue(label: "swifter.httpserverio.httprouter")
 
+	public func reset() {
+		rootNode.nodes.removeAll()
+	}
+
     public func routes() -> [String] {
         var routes = [String]()
         for (_, child) in rootNode.nodes {
